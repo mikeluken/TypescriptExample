@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.bundle.js" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.bundle.js.map" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.bundle.min.js" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.bundle.min.js.map" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.esm.js" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.esm.js.map" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.esm.min.js" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.esm.min.js.map" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.js" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.js.map" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.min.js" />
+    <Content Remove="C:\n\bootstrap\5.3.6\contentFiles\any\any\wwwroot\js\bootstrap.min.js.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Javascript\site.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="node_modules\" />
+    <Folder Include="wwwroot\js\compiled\" />
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.3.6" />
+    <PackageReference Include="jQuery" Version="3.7.1" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.8.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="Javascript\site.ts" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="call build\post-build.bat" />
+  </Target>
+
+</Project>

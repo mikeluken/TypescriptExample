@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Import Test";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+}
+
+@section Scripts
+{
+    @Html.AntiForgeryToken()
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script src="~/js/compiled/site.js" asp-append-version="true"></script>
+    <script src="~/js/compiled/errors.js" asp-append-version="true"></script>
+}
+
+<form id="f1" method="post" data-ajax="true" data-ajax-method="post" data-ajax-complete="formSubmitted" onsubmit="formSubmitting();">
+    <button class="btn btn-primary" type="submit" id="btnSubmit">
+        <span>Click here!!!</span>
+    </button>
+</form>
