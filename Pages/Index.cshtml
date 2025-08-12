@@ -16,12 +16,23 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-    <script src="~/js/compiled/site.js" asp-append-version="true"></script>
-    <script src="~/js/compiled/errors.js" asp-append-version="true"></script>
+    <script type"module" src="~/js/compiled/site.js" asp-append-version="true"></script>
+    <script type"module" src="~/js/compiled/errors.js" asp-append-version="true"></script>
 }
 
-<form id="f1" method="post" data-ajax="true" data-ajax-method="post" data-ajax-complete="formSubmitted" onsubmit="formSubmitting();">
-    <button class="btn btn-primary" type="submit" id="btnSubmit">
-        <span>Click here!!!</span>
-    </button>
-</form>
+<p>
+    If you open dev tools, you should see the following errors:
+</p>
+
+<ul>
+    <li>Uncaught SyntaxError: Cannot use import statement outside a module</li>
+    <li>Uncaught SyntaxError: Unexpected token 'export'</li>
+</ul>
+
+<p>
+    If you look at the page source, you can see that both of the .js files are specified as mmodules:
+</p>
+
+<p>
+    <img src="/images/devtools.png" style="border: 1px solid black;"/>
+</p>

@@ -1,9 +1,7 @@
 ﻿import { hideErrorMessage } from './errors';
 
-export function formSubmitted(result: object): void {
-    console.log("This gets hit");
+export function formSubmitted(result: unknown): void {
     hideErrorMessage();
-    console.log("This does not get hit");
 }
 
 export function formSubmitting(): void {

@@ -1,20 +1,29 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,
-    "noEmitOnError": true,
-    "removeComments": false,
-    "sourceMap": true,
-    "target": "es5",
     "outDir": "wwwroot/js/compiled",
-    "moduleResolution": "node",
+    "target": "es6",
+    "module": "esnext",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "useUnknownInCatchVariables": true,
+    "noEmitOnError": true,
+    "removeComments": true,
     "allowUnreachableCode": false,
     "alwaysStrict": true,
-    "esModuleInterop": true,
-    "types": [ "jquery" ]
+    "allowSyntheticDefaultImports": true,
+    "types": [ "jquery", "bootstrap", "@types/grecaptcha" ]
   },
   "compileOnSave": true,
   "exclude": [
     "node_modules",
     "wwwroot"
+  ],
+  "include": [
+    "scripts/**/*.ts"
   ]
 }
