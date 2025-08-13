@@ -16,23 +16,19 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-    <script type"module" src="~/js/compiled/site.js" asp-append-version="true"></script>
-    <script type"module" src="~/js/compiled/errors.js" asp-append-version="true"></script>
+    <script type="module" src="~/js/compiled/site.js" asp-append-version="true"></script>
+    <script type="module" src="~/js/compiled/errors.js" asp-append-version="true"></script>
 }
 
 <p>
-    If you open dev tools, you should see the following errors:
+    In order for this to be a successful test, I would want to see in the dev tools console the following TWO messages:
 </p>
 
 <ul>
-    <li>Uncaught SyntaxError: Cannot use import statement outside a module</li>
-    <li>Uncaught SyntaxError: Unexpected token 'export'</li>
+    <li>Form is submitting....</li>
+    <li>Form submitted...</li>
 </ul>
 
-<p>
-    If you look at the page source, you can see that both of the .js files are specified as mmodules:
-</p>
-
-<p>
-    <img src="/images/devtools.png" style="border: 1px solid black;"/>
-</p>
+<form id="f1" method="post" data-ajax="true" data-ajax-method="post" data-ajax-complete="formSubmitted" onsubmit="formSubmitting();">
+    <input type="submit" value="   TEST ME   " />
+</form>
