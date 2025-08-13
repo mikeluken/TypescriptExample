@@ -21,7 +21,8 @@
 }
 
 <p>
-    In order for this to be a successful test, I would want to see in the dev tools console the following TWO messages:
+    In order for this to be a successful test, I would want to see in the dev tools console the following TWO messages, 
+    as well as some json to see who is getting the juicy apple:
 </p>
 
 <ul>
@@ -29,6 +30,18 @@
     <li>Form submitted...</li>
 </ul>
 
-<form id="f1" method="post" data-ajax="true" data-ajax-method="post" data-ajax-complete="formSubmitted" onsubmit="formSubmitting();">
-    <input type="submit" value="   TEST ME   " />
+<form id="f1" method="post" data-ajax="true" data-ajax-method="post">
+
+    <div>
+        Enter e-mail addres so we can send you a juicy apple!
+    </div>
+
+    <div>
+        <input type="text" id="txtEmailAddress" asp-for="EmailAddress" required="" />
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+    </div>
+
+    <div style="padding-top: 24px;">
+        <input type="submit" value="   TEST ME   " id="btnSubmit" />
+    </div>
 </form>
