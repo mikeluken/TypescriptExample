@@ -1,6 +1,17 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!script type="importmap">
+    {
+    "imports": {
+    "jquery": "/lib/jquery/jquery.min.js",
+    "bootstrap": "/lib/bootstrap/js/bootstrap.min.js",
+    "jquery-validation-unobtrusive": "/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+    "/js/compiled/*": "/js/compiled/*.js"
+    }
+    }
+    </!script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
@@ -26,9 +37,9 @@
         </div>
     </footer>
 
-    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

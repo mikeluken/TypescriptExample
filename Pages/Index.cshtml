@@ -17,31 +17,33 @@
     }
 
     <script type="module" src="~/js/compiled/site.js" asp-append-version="true"></script>
-    <script type="module" src="~/js/compiled/errors.js" asp-append-version="true"></script>
 }
 
 <p>
-    In order for this to be a successful test, I would want to see in the dev tools console the following TWO messages, 
-    as well as some json to see who is getting the juicy apple:
+    We are so close! Last remaning thing is to be able to click the button below and have it open a modaal window.
 </p>
 
-<ul>
-    <li>Form is submitting....</li>
-    <li>Form submitted...</li>
-</ul>
+<p>
+    Instread, it gives this error in the console:
+</p>
 
-<form id="f1" method="post" data-ajax="true" data-ajax-method="post">
+<p>
+    <b>TypeError: bootstrap.Modal is not a constructor</b>
+</p>
 
-    <div>
-        Enter e-mail addres so we can send you a juicy apple!
+<p>
+    Your mission, should you choose to accept it, is to figure out and fix this so that this button launches a modal. 
+    This message will self destruct in 5 seconds...
+</p>
+
+<input type="button" id="btnLaunchModal" value="  CLICK ME  " />
+
+<div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-enlarge">
+        <div class="modal-content">
+            <div class="modal-body modal-body-centered">
+                YOU DID IT!!!!!
+            </div>
+        </div>
     </div>
-
-    <div>
-        <input type="text" id="txtEmailAddress" asp-for="EmailAddress" required="" />
-        <span asp-validation-for="EmailAddress" class="text-danger"></span>
-    </div>
-
-    <div style="padding-top: 24px;">
-        <input type="submit" value="   TEST ME   " id="btnSubmit" />
-    </div>
-</form>
+</div>
